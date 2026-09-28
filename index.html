@@ -1,22 +1,21 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timpass — Fun Starts Here</title>
+<title>Timpass</title>
 
 <style>
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Inter, Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
     background: #f6f7fb;
-    color: #151515;
+    color: #171717;
 }
 
 /* NAVBAR */
@@ -30,11 +29,11 @@ body {
     padding: 0 6%;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 27px;
     font-weight: 800;
     color: #6c4cff;
 }
@@ -47,18 +46,13 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #555;
-    font-size: 15px;
-}
-
-.nav-links a:hover {
-    color: #6c4cff;
 }
 
 .profile {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: linear-gradient(135deg,#6c4cff,#9f7aea);
+    background: #6c4cff;
     color: white;
     display: flex;
     align-items: center;
@@ -68,7 +62,7 @@ body {
 
 /* HERO */
 .hero {
-    padding: 70px 6% 40px;
+    padding: 70px 6%;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 50px;
@@ -95,15 +89,15 @@ body {
 .hero-buttons {
     margin-top: 30px;
     display: flex;
-    gap: 15px;
+    gap: 12px;
 }
 
 .btn {
-    border: none;
-    padding: 15px 25px;
+    padding: 14px 24px;
+    border: 0;
     border-radius: 12px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -117,57 +111,40 @@ body {
     border: 1px solid #ddd;
 }
 
-/* APP PREVIEW */
+/* PREVIEW */
 .app-preview {
-    background: #151515;
+    background: #171717;
     border-radius: 25px;
     padding: 25px;
-    box-shadow: 0 25px 60px rgba(0,0,0,.18);
     color: white;
+    box-shadow: 0 20px 50px #0002;
 }
 
 .preview-top {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .preview-card {
     background: #252525;
+    padding: 20px;
     border-radius: 18px;
-    padding: 22px;
     margin-bottom: 15px;
 }
 
 .big-score {
     font-size: 42px;
-    font-weight: 800;
+    font-weight: bold;
     margin-top: 8px;
 }
 
-.progress {
-    height: 8px;
-    background: #444;
-    border-radius: 10px;
-    margin-top: 15px;
-    overflow: hidden;
-}
-
-.progress div {
-    height: 100%;
-    width: 70%;
-    background: #8b6cff;
-}
-
-/* SECTION */
+/* SECTIONS */
 .section {
-    padding: 50px 6%;
+    padding: 40px 6%;
 }
 
 .section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 25px;
 }
 
@@ -175,36 +152,37 @@ body {
     font-size: 30px;
 }
 
+/* GAME CARDS */
 .games {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .game-card {
     background: white;
-    border-radius: 18px;
-    padding: 25px;
     border: 1px solid #eee;
-    transition: .25s;
+    padding: 25px;
+    border-radius: 18px;
     cursor: pointer;
+    transition: .25s;
 }
 
 .game-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 30px rgba(0,0,0,.08);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px #0001;
 }
 
 .game-icon {
     width: 60px;
     height: 60px;
+    background: #eeeaff;
     border-radius: 15px;
-    background: #eee9ff;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .game-card h3 {
@@ -237,15 +215,14 @@ body {
 
 .stat h2 {
     margin-top: 8px;
-    font-size: 32px;
 }
 
 /* FOOTER */
 footer {
-    margin-top: 50px;
-    background: #151515;
+    background: #171717;
     color: white;
     padding: 40px 6%;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
 }
@@ -254,21 +231,22 @@ footer p {
     color: #aaa;
 }
 
-/* GAME MODAL */
+/* MODAL */
 .modal {
-    display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.75);
-    z-index: 999;
+    background: #000b;
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 
-.game-box {
-    width: 90%;
-    max-width: 700px;
-    height: 500px;
+.modal-box {
+    width: 92%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
     background: white;
     border-radius: 25px;
     padding: 25px;
@@ -278,33 +256,65 @@ footer p {
 .close {
     position: absolute;
     right: 20px;
-    top: 15px;
-    font-size: 28px;
+    top: 12px;
+    font-size: 30px;
     cursor: pointer;
 }
 
-#playArea {
-    height: 360px;
-    background: #f1efff;
+/* TAP GAME */
+#tapArea {
+    height: 350px;
+    background: #f0edff;
     border-radius: 18px;
     position: relative;
     overflow: hidden;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 #circle {
+    position: absolute;
     width: 55px;
     height: 55px;
     background: #6c4cff;
     border-radius: 50%;
-    position: absolute;
     display: none;
     cursor: pointer;
 }
 
+/* MEMORY GAME */
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    border: 0;
+    border-radius: 12px;
+    background: #6c4cff;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transform: rotateY(0deg);
+    transition: transform .25s;
+}
+
+.memory-card.flipped,
+.memory-card.matched {
+    background: white;
+    border: 2px solid #6c4cff;
+    color: #111;
+}
+
+.memory-card.matched {
+    opacity: .6;
+    cursor: default;
+}
+
 /* MOBILE */
 @media(max-width: 900px) {
-
     .hero {
         grid-template-columns: 1fr;
     }
@@ -319,7 +329,6 @@ footer p {
 }
 
 @media(max-width: 600px) {
-
     .hero h1 {
         font-size: 42px;
     }
@@ -327,6 +336,14 @@ footer p {
     .games,
     .stats {
         grid-template-columns: 1fr;
+    }
+
+    .memory-board {
+        gap: 7px;
+    }
+
+    .memory-card {
+        font-size: 24px;
     }
 
     footer {
@@ -364,11 +381,11 @@ footer p {
 
         <p>
             Take a break, play quick games, challenge yourself
-            and have some fun whenever you need it.
+            and beat your personal records.
         </p>
 
         <div class="hero-buttons">
-            <button class="btn primary" onclick="openGame()">
+            <button class="btn primary" onclick="openTapGame()">
                 ▶ Play Now
             </button>
 
@@ -379,8 +396,6 @@ footer p {
         </div>
     </div>
 
-
-    <!-- APP PREVIEW -->
     <div class="app-preview">
 
         <div class="preview-top">
@@ -390,16 +405,12 @@ footer p {
 
         <div class="preview-card">
             <small>Today's Score</small>
-            <div class="big-score" id="previewScore">1,240</div>
-
-            <div class="progress">
-                <div></div>
-            </div>
+            <div class="big-score" id="previewScore">0</div>
         </div>
 
         <div class="preview-card">
             <small>Favourite Game</small>
-            <h3 style="margin-top:8px;">🎯 Tap Rush</h3>
+            <h3 style="margin-top:8px;">🧠 Memory Flip</h3>
         </div>
 
     </div>
@@ -412,33 +423,34 @@ footer p {
 
     <div class="section-title">
         <h2>Popular Games</h2>
-        <span>View all →</span>
     </div>
 
     <div class="games">
 
-        <div class="game-card" onclick="openGame()">
+        <!-- TAP RUSH -->
+        <div class="game-card" onclick="openTapGame()">
             <div class="game-icon">🎯</div>
             <h3>Tap Rush</h3>
             <p>Test your speed and tap the target as quickly as possible.</p>
         </div>
 
-        <div class="game-card">
+        <!-- MEMORY FLIP -->
+        <div class="game-card" onclick="openMemoryGame()">
             <div class="game-icon">🧠</div>
             <h3>Memory Flip</h3>
-            <p>Remember the cards and match all the pairs.</p>
+            <p>Flip cards and match all the hidden pairs.</p>
         </div>
 
         <div class="game-card">
             <div class="game-icon">🧩</div>
             <h3>Quick Puzzle</h3>
-            <p>Solve simple puzzles before the timer runs out.</p>
+            <p>Coming soon.</p>
         </div>
 
         <div class="game-card">
             <div class="game-icon">🚀</div>
             <h3>Space Run</h3>
-            <p>Survive the obstacles and beat your high score.</p>
+            <p>Coming soon.</p>
         </div>
 
     </div>
@@ -456,18 +468,18 @@ footer p {
     <div class="stats">
 
         <div class="stat">
-            <small>Total Games</small>
-            <h2>128</h2>
+            <small>Games Played</small>
+            <h2 id="gamesPlayed">0</h2>
         </div>
 
         <div class="stat">
-            <small>Best Score</small>
-            <h2 id="bestScore">86</h2>
+            <small>Best Memory Moves</small>
+            <h2 id="memoryBest">-</h2>
         </div>
 
         <div class="stat">
-            <small>Play Time</small>
-            <h2>4h 32m</h2>
+            <small>Tap Rush Best</small>
+            <h2 id="tapBest">0</h2>
         </div>
 
     </div>
@@ -475,7 +487,6 @@ footer p {
 </section>
 
 
-<!-- FOOTER -->
 <footer>
     <div>
         <h2>timpass.</h2>
@@ -486,27 +497,53 @@ footer p {
 </footer>
 
 
-<!-- GAME MODAL -->
-<div class="modal" id="gameModal">
+<!-- TAP RUSH MODAL -->
+<div class="modal" id="tapModal">
 
-    <div class="game-box">
+    <div class="modal-box">
 
-        <div class="close" onclick="closeGame()">×</div>
+        <div class="close" onclick="closeTapGame()">×</div>
 
         <h2>🎯 Tap Rush</h2>
 
         <p>
-            Score: <b id="score">0</b>
+            Score: <b id="tapScore">0</b>
             &nbsp; | &nbsp;
-            Time: <b id="time">20</b>s
+            Time: <b id="tapTime">20</b>s
         </p>
 
-        <div id="playArea">
+        <div id="tapArea">
             <div id="circle"></div>
         </div>
 
-        <button class="btn primary" onclick="startGame()">
+        <button class="btn primary" onclick="startTapGame()">
             Start Game
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MEMORY FLIP MODAL -->
+<div class="modal" id="memoryModal">
+
+    <div class="modal-box">
+
+        <div class="close" onclick="closeMemoryGame()">×</div>
+
+        <h2>🧠 Memory Flip</h2>
+
+        <p>
+            Moves: <b id="moves">0</b>
+            &nbsp; | &nbsp;
+            Matches: <b id="matches">0</b>/8
+        </p>
+
+        <div class="memory-board" id="memoryBoard"></div>
+
+        <button class="btn primary" onclick="startMemoryGame()">
+            New Game
         </button>
 
     </div>
@@ -516,58 +553,77 @@ footer p {
 
 <script>
 
-let score = 0;
-let time = 20;
-let timer;
-let playing = false;
+/* =========================
+   GENERAL STATS
+========================= */
 
-const modal = document.getElementById("gameModal");
+let gamesPlayed =
+    Number(localStorage.getItem("gamesPlayed") || 0);
+
+document.getElementById("gamesPlayed").textContent =
+    gamesPlayed;
+
+
+/* =========================
+   TAP RUSH
+========================= */
+
+let tapScore = 0;
+let tapTime = 20;
+let tapTimer;
+let tapPlaying = false;
+
+const tapModal = document.getElementById("tapModal");
 const circle = document.getElementById("circle");
-const playArea = document.getElementById("playArea");
+const tapArea = document.getElementById("tapArea");
 
-function openGame() {
-    modal.style.display = "flex";
+function openTapGame() {
+    tapModal.style.display = "flex";
 }
 
-function closeGame() {
-    modal.style.display = "none";
-    playing = false;
-    clearInterval(timer);
+function closeTapGame() {
+    tapModal.style.display = "none";
+    tapPlaying = false;
+    clearInterval(tapTimer);
     circle.style.display = "none";
 }
 
-function startGame() {
+function startTapGame() {
 
-    score = 0;
-    time = 20;
-    playing = true;
+    tapScore = 0;
+    tapTime = 20;
+    tapPlaying = true;
 
-    document.getElementById("score").textContent = score;
-    document.getElementById("time").textContent = time;
+    document.getElementById("tapScore").textContent = tapScore;
+    document.getElementById("tapTime").textContent = tapTime;
 
     circle.style.display = "block";
 
     moveCircle();
 
-    clearInterval(timer);
+    clearInterval(tapTimer);
 
-    timer = setInterval(() => {
+    tapTimer = setInterval(() => {
 
-        time--;
+        tapTime--;
 
-        document.getElementById("time").textContent = time;
+        document.getElementById("tapTime").textContent =
+            tapTime;
 
-        if (time <= 0) {
-            endGame();
+        if (tapTime <= 0) {
+            endTapGame();
         }
 
-    },1000);
+    }, 1000);
 }
 
 function moveCircle() {
 
-    const maxX = playArea.clientWidth - circle.offsetWidth;
-    const maxY = playArea.clientHeight - circle.offsetHeight;
+    const maxX =
+        tapArea.clientWidth - circle.offsetWidth;
+
+    const maxY =
+        tapArea.clientHeight - circle.offsetHeight;
 
     circle.style.left =
         Math.random() * maxX + "px";
@@ -578,43 +634,251 @@ function moveCircle() {
 
 circle.onclick = function() {
 
-    if (!playing) return;
+    if (!tapPlaying) return;
 
-    score++;
+    tapScore++;
 
-    document.getElementById("score").textContent = score;
+    document.getElementById("tapScore").textContent =
+        tapScore;
 
     moveCircle();
 };
 
-function endGame() {
+function endTapGame() {
 
-    playing = false;
+    tapPlaying = false;
 
-    clearInterval(timer);
+    clearInterval(tapTimer);
 
     circle.style.display = "none";
 
     let best =
-        Number(localStorage.getItem("bestScore") || 0);
+        Number(localStorage.getItem("tapBest") || 0);
 
-    if (score > best) {
-
-        best = score;
-
-        localStorage.setItem("bestScore", best);
-
-        document.getElementById("bestScore").textContent = best;
-
+    if (tapScore > best) {
+        localStorage.setItem("tapBest", tapScore);
+        best = tapScore;
     }
 
-    document.getElementById("previewScore").textContent =
-        score.toLocaleString();
+    document.getElementById("tapBest").textContent = best;
 
-    alert(
-        "Game Over! 🎮\n\nYour Score: " + score
-    );
+    gamesPlayed++;
+    localStorage.setItem("gamesPlayed", gamesPlayed);
+
+    document.getElementById("gamesPlayed").textContent =
+        gamesPlayed;
+
+    document.getElementById("previewScore").textContent =
+        tapScore;
+
+    alert("🎯 Game Over!\n\nYour score: " + tapScore);
 }
+
+
+/* =========================
+   MEMORY FLIP
+========================= */
+
+const memoryModal =
+    document.getElementById("memoryModal");
+
+const memoryBoard =
+    document.getElementById("memoryBoard");
+
+const emojis = [
+    "🍎", "🍎",
+    "🍕", "🍕",
+    "🚀", "🚀",
+    "🐶", "🐶",
+    "⚽", "⚽",
+    "🎮", "🎮",
+    "🌟", "🌟",
+    "🍔", "🍔"
+];
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+let memoryMoves = 0;
+let memoryMatches = 0;
+
+function openMemoryGame() {
+
+    memoryModal.style.display = "flex";
+
+    startMemoryGame();
+}
+
+function closeMemoryGame() {
+
+    memoryModal.style.display = "none";
+
+    lockBoard = false;
+}
+
+function startMemoryGame() {
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+
+    memoryMoves = 0;
+    memoryMatches = 0;
+
+    document.getElementById("moves").textContent =
+        memoryMoves;
+
+    document.getElementById("matches").textContent =
+        memoryMatches;
+
+    memoryBoard.innerHTML = "";
+
+    // Shuffle cards
+    let cards = [...emojis];
+
+    cards.sort(() => Math.random() - 0.5);
+
+    cards.forEach((emoji, index) => {
+
+        const card =
+            document.createElement("button");
+
+        card.className = "memory-card";
+
+        card.dataset.value = emoji;
+
+        card.dataset.index = index;
+
+        card.textContent = "?";
+
+        card.onclick = () => flipCard(card);
+
+        memoryBoard.appendChild(card);
+    });
+}
+
+function flipCard(card) {
+
+    if (lockBoard) return;
+
+    if (card.classList.contains("flipped")) return;
+
+    if (card.classList.contains("matched")) return;
+
+    card.classList.add("flipped");
+
+    card.textContent = card.dataset.value;
+
+    if (!firstCard) {
+
+        firstCard = card;
+
+        return;
+    }
+
+    secondCard = card;
+
+    memoryMoves++;
+
+    document.getElementById("moves").textContent =
+        memoryMoves;
+
+    checkMatch();
+}
+
+function checkMatch() {
+
+    const isMatch =
+        firstCard.dataset.value ===
+        secondCard.dataset.value;
+
+    if (isMatch) {
+
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+
+        memoryMatches++;
+
+        document.getElementById("matches").textContent =
+            memoryMatches;
+
+        resetCards();
+
+        if (memoryMatches === 8) {
+
+            setTimeout(() => {
+
+                let best =
+                    Number(localStorage.getItem(
+                        "memoryBest"
+                    ) || 0);
+
+                if (best === 0 || memoryMoves < best) {
+
+                    localStorage.setItem(
+                        "memoryBest",
+                        memoryMoves
+                    );
+
+                    document.getElementById(
+                        "memoryBest"
+                    ).textContent = memoryMoves;
+                }
+
+                gamesPlayed++;
+
+                localStorage.setItem(
+                    "gamesPlayed",
+                    gamesPlayed
+                );
+
+                document.getElementById(
+                    "gamesPlayed"
+                ).textContent = gamesPlayed;
+
+                alert(
+                    "🎉 You won!\n\n" +
+                    "You completed Memory Flip in " +
+                    memoryMoves +
+                    " moves!"
+                );
+
+            }, 300);
+        }
+
+    } else {
+
+        lockBoard = true;
+
+        setTimeout(() => {
+
+            firstCard.classList.remove("flipped");
+            secondCard.classList.remove("flipped");
+
+            firstCard.textContent = "?";
+            secondCard.textContent = "?";
+
+            resetCards();
+
+        }, 800);
+    }
+}
+
+function resetCards() {
+
+    firstCard = null;
+    secondCard = null;
+    lockBoard = false;
+}
+
+
+/* LOAD SAVED STATS */
+
+document.getElementById("tapBest").textContent =
+    localStorage.getItem("tapBest") || 0;
+
+document.getElementById("memoryBest").textContent =
+    localStorage.getItem("memoryBest") || "-";
 
 </script>
 
