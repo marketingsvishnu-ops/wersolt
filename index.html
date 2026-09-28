@@ -1,227 +1,337 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AllPanel 7 ID</title>
+<title>Timpass — Fun Starts Here</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
 }
 
-body{
-    background:#042b23;
-    color:#fff;
-    overflow-x:auto;
+body {
+    background: #f6f7fb;
+    color: #151515;
 }
 
-.container{
-    display:flex;
-    min-height:100vh;
+/* NAVBAR */
+.navbar {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.demo{
-    width:70%;
-    background:#111;
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #6c4cff;
 }
 
-iframe{
-    width:100%;
-    height:100vh;
-    border:none;
+.nav-links {
+    display: flex;
+    gap: 30px;
 }
 
-.right{
-    width:30%;
-    padding:30px 22px;
-    background:linear-gradient(180deg,#008f73,#043d33);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
 }
 
-.box{
-    width:100%;
-    background:#07110f;
-    border:1px solid #00e8ad;
-    border-radius:22px;
-    padding:24px 18px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(0,232,173,.35);
+.nav-links a:hover {
+    color: #6c4cff;
 }
 
-.badge{
-    display:inline-block;
-    background:#00e8ad;
-    color:#001f18;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:16px;
+.profile {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#6c4cff,#9f7aea);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-h1{
-    color:#00e8ad;
-    font-size:30px;
-    text-transform:uppercase;
-    margin-bottom:12px;
+/* HERO */
+.hero {
+    padding: 70px 6% 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.sub{
-    color:#ddd;
-    line-height:1.6;
-    margin-bottom:18px;
-    font-size:16px;
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.05;
+    margin-bottom: 20px;
 }
 
-.process{
-    text-align:left;
-    background:linear-gradient(180deg,#07110f,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:16px;
-    padding:18px;
-    margin:18px 0;
+.hero h1 span {
+    color: #6c4cff;
 }
 
-.process h2{
-    color:#00e8ad;
-    font-size:20px;
-    margin-bottom:12px;
-    text-align:center;
+.hero p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 550px;
 }
 
-.process h3{
-    color:#fff;
-    font-size:18px;
-    margin:16px 0 8px;
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
 }
 
-.process p,
-.process li{
-    color:#ddd;
-    font-size:15px;
-    line-height:1.6;
+.btn {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-.process ol{
-    padding-left:20px;
+.primary {
+    background: #6c4cff;
+    color: white;
 }
 
-.manual-whatsapp,
-.signup{
-    display:block;
-    background:#00e8ad;
-    color:#001f18;
-    text-decoration:none;
-    padding:15px;
-    border-radius:14px;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    box-shadow:0 0 18px rgba(0,232,173,.4);
+.secondary {
+    background: white;
+    border: 1px solid #ddd;
 }
 
-.manual-whatsapp{
-    margin:14px 0 8px;
+/* APP PREVIEW */
+.app-preview {
+    background: #151515;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,.18);
+    color: white;
 }
 
-.signup{
-    margin-top:16px;
+.preview-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
 
-.manual-whatsapp:hover,
-.signup:hover{
-    background:#00c996;
+.preview-card {
+    background: #252525;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 15px;
 }
 
-.features{
-    display:grid;
-    gap:12px;
-    margin:22px 0 18px;
+.big-score {
+    font-size: 42px;
+    font-weight: 800;
+    margin-top: 8px;
 }
 
-.feature{
-    background:linear-gradient(90deg,#092a24,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:14px;
-    padding:14px;
-    font-size:17px;
-    font-weight:bold;
+.progress {
+    height: 8px;
+    background: #444;
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
 }
 
-.feature span{
-    color:#00e8ad;
+.progress div {
+    height: 100%;
+    width: 70%;
+    background: #8b6cff;
 }
 
-.website-row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:18px;
-    font-weight:bold;
-    flex-wrap:wrap;
+/* SECTION */
+.section {
+    padding: 50px 6%;
 }
 
-.website-row a{
-    text-decoration:none;
-    word-break:break-word;
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.website,
-.whatsapp-small{
-    color:#00e8ad;
+.section-title h2 {
+    font-size: 30px;
 }
 
-.trust{
-    margin-top:18px;
-    color:#ccc;
-    line-height:1.7;
+.games {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
 }
 
-.footer{
-    margin-top:20px;
-    color:#888;
-    font-size:12px;
+.game-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    border: 1px solid #eee;
+    transition: .25s;
+    cursor: pointer;
 }
 
-/* MOBILE — Laptop jaisa same layout */
-@media(max-width:768px){
+.game-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
 
-    body{
-        overflow-x:auto;
+.game-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    background: #eee9ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.game-card h3 {
+    margin-bottom: 8px;
+}
+
+.game-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.stat {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+}
+
+.stat small {
+    color: #888;
+}
+
+.stat h2 {
+    margin-top: 8px;
+    font-size: 32px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 50px;
+    background: #151515;
+    color: white;
+    padding: 40px 6%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer p {
+    color: #aaa;
+}
+
+/* GAME MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-box {
+    width: 90%;
+    max-width: 700px;
+    height: 500px;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#playArea {
+    height: 360px;
+    background: #f1efff;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#circle {
+    width: 55px;
+    height: 55px;
+    background: #6c4cff;
+    border-radius: 50%;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
     }
 
-    .container{
-        width:1200px;
-        min-width:1200px;
-        flex-direction:row;
+    .games {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .demo{
-        width:70%;
+    .nav-links {
+        display: none;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .right{
-        width:30%;
-        padding:25px 18px;
+    .games,
+    .stats {
+        grid-template-columns: 1fr;
     }
 
-    iframe{
-        height:100vh;
-        min-height:700px;
-    }
-
-    h1{
-        font-size:28px;
-    }
-
-    .manual-whatsapp,
-    .signup{
-        font-size:19px;
+    footer {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 </style>
@@ -229,117 +339,285 @@ h1{
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">timpass.</div>
 
-    <div class="demo">
-        <iframe src="https://www.allpanel7.com/?code=MAHA1991"></iframe>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#stats">Stats</a>
     </div>
 
-    <div class="right">
+    <div class="profile">T</div>
+</nav>
 
-        <div class="box">
 
-            <div class="badge">ALLPANEL7</div>
+<!-- HERO -->
+<section class="hero" id="home">
 
-            <h1>Get Your AllPanel7 ID</h1>
+    <div>
+        <h1>
+            Your daily dose of
+            <span>fun.</span>
+        </h1>
 
-            <p class="sub">
-                Choose the registration method that's most convenient for you and get started with AllPanel 7 today!
-            </p>
+        <p>
+            Take a break, play quick games, challenge yourself
+            and have some fun whenever you need it.
+        </p>
 
-            <div class="process">
+        <div class="hero-buttons">
+            <button class="btn primary" onclick="openGame()">
+                ▶ Play Now
+            </button>
 
-                <h2>Get Your AllPanel 7 ID – Your Choice!</h2>
-
-                <h3>✅ Manual ID</h3>
-
-                <p>
-                    Click the <strong>"WhatsApp Now"</strong> button and our team will create your ID for you.
-                </p>
-
-                <a class="manual-whatsapp"
-                   href="https://wa.me/+917980303785?text=Hello%20I%20want%20new%20manual%20ID"
-                   target="_blank">
-                    📲 WhatsApp Now
-                </a>
-
-                <h3>✅ Self-Registration</h3>
-
-                <p>
-                    Click the <strong>"Sign Up"</strong> button and follow these simple steps:
-                </p>
-
-                <ol>
-                    <li>Enter your mobile number.</li>
-                    <li>Create your username.</li>
-                    <li>Create your password and confirm it.</li>
-                    <li>The Signup Code is pre-filled as <strong>MAHA1991</strong>.</li>
-                    <li>Click <strong>"Sign Up"</strong> to complete your registration.</li>
-                </ol>
-
-                <a class="signup"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    📝 Sign Up
-                </a>
-
-            </div>
-
-            <div class="features">
-
-                <div class="feature">
-                    Minimum Deposit:
-                    <span>₹100 Only</span>
-                </div>
-
-                <div class="feature">
-                    Welcome Bonus:
-                    <span>10%</span>
-                </div>
-
-                <div class="feature">
-                    Auto and Manual Service:
-                    <span>Available</span>
-                </div>
-
-                <div class="feature">
-                    Quick Help:
-                    <span>24/7 Support Available</span>
-                </div>
-
-            </div>
-
-            <div class="website-row">
-
-                <a class="website"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    🌐 www.allpanel7.com/?code=MAHA1991
-                </a>
-
-                <a class="whatsapp-small"
-                   href="https://wa.me/+917980303785"
-                   target="_blank">
-                    💬 WhatsApp
-                </a>
-
-            </div>
-
-            <div class="trust">
-                ✅ Trusted Manual Support<br>
-                ✅ Simple Process<br>
-                ✅ Fast Response
-            </div>
-
-            <div class="footer">
-                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
-            </div>
-
+            <button class="btn secondary"
+                    onclick="document.getElementById('games').scrollIntoView()">
+                Explore Games
+            </button>
         </div>
+    </div>
+
+
+    <!-- APP PREVIEW -->
+    <div class="app-preview">
+
+        <div class="preview-top">
+            <strong>Today's Activity</strong>
+            <span>🔥 7 day streak</span>
+        </div>
+
+        <div class="preview-card">
+            <small>Today's Score</small>
+            <div class="big-score" id="previewScore">1,240</div>
+
+            <div class="progress">
+                <div></div>
+            </div>
+        </div>
+
+        <div class="preview-card">
+            <small>Favourite Game</small>
+            <h3 style="margin-top:8px;">🎯 Tap Rush</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GAMES -->
+<section class="section" id="games">
+
+    <div class="section-title">
+        <h2>Popular Games</h2>
+        <span>View all →</span>
+    </div>
+
+    <div class="games">
+
+        <div class="game-card" onclick="openGame()">
+            <div class="game-icon">🎯</div>
+            <h3>Tap Rush</h3>
+            <p>Test your speed and tap the target as quickly as possible.</p>
+        </div>
+
+        <div class="game-card">
+            <div class="game-icon">🧠</div>
+            <h3>Memory Flip</h3>
+            <p>Remember the cards and match all the pairs.</p>
+        </div>
+
+        <div class="game-card">
+            <div class="game-icon">🧩</div>
+            <h3>Quick Puzzle</h3>
+            <p>Solve simple puzzles before the timer runs out.</p>
+        </div>
+
+        <div class="game-card">
+            <div class="game-icon">🚀</div>
+            <h3>Space Run</h3>
+            <p>Survive the obstacles and beat your high score.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STATS -->
+<section class="section" id="stats">
+
+    <div class="section-title">
+        <h2>Your Stats</h2>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <small>Total Games</small>
+            <h2>128</h2>
+        </div>
+
+        <div class="stat">
+            <small>Best Score</small>
+            <h2 id="bestScore">86</h2>
+        </div>
+
+        <div class="stat">
+            <small>Play Time</small>
+            <h2>4h 32m</h2>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div>
+        <h2>timpass.</h2>
+        <p>Small games. Big fun.</p>
+    </div>
+
+    <p>© 2026 Timpass</p>
+</footer>
+
+
+<!-- GAME MODAL -->
+<div class="modal" id="gameModal">
+
+    <div class="game-box">
+
+        <div class="close" onclick="closeGame()">×</div>
+
+        <h2>🎯 Tap Rush</h2>
+
+        <p>
+            Score: <b id="score">0</b>
+            &nbsp; | &nbsp;
+            Time: <b id="time">20</b>s
+        </p>
+
+        <div id="playArea">
+            <div id="circle"></div>
+        </div>
+
+        <button class="btn primary" onclick="startGame()">
+            Start Game
+        </button>
 
     </div>
 
 </div>
 
+
+<script>
+
+let score = 0;
+let time = 20;
+let timer;
+let playing = false;
+
+const modal = document.getElementById("gameModal");
+const circle = document.getElementById("circle");
+const playArea = document.getElementById("playArea");
+
+function openGame() {
+    modal.style.display = "flex";
+}
+
+function closeGame() {
+    modal.style.display = "none";
+    playing = false;
+    clearInterval(timer);
+    circle.style.display = "none";
+}
+
+function startGame() {
+
+    score = 0;
+    time = 20;
+    playing = true;
+
+    document.getElementById("score").textContent = score;
+    document.getElementById("time").textContent = time;
+
+    circle.style.display = "block";
+
+    moveCircle();
+
+    clearInterval(timer);
+
+    timer = setInterval(() => {
+
+        time--;
+
+        document.getElementById("time").textContent = time;
+
+        if (time <= 0) {
+            endGame();
+        }
+
+    },1000);
+}
+
+function moveCircle() {
+
+    const maxX = playArea.clientWidth - circle.offsetWidth;
+    const maxY = playArea.clientHeight - circle.offsetHeight;
+
+    circle.style.left =
+        Math.random() * maxX + "px";
+
+    circle.style.top =
+        Math.random() * maxY + "px";
+}
+
+circle.onclick = function() {
+
+    if (!playing) return;
+
+    score++;
+
+    document.getElementById("score").textContent = score;
+
+    moveCircle();
+};
+
+function endGame() {
+
+    playing = false;
+
+    clearInterval(timer);
+
+    circle.style.display = "none";
+
+    let best =
+        Number(localStorage.getItem("bestScore") || 0);
+
+    if (score > best) {
+
+        best = score;
+
+        localStorage.setItem("bestScore", best);
+
+        document.getElementById("bestScore").textContent = best;
+
+    }
+
+    document.getElementById("previewScore").textContent =
+        score.toLocaleString();
+
+    alert(
+        "Game Over! 🎮\n\nYour Score: " + score
+    );
+}
+
+</script>
+
 </body>
 </html>
+```
