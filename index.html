@@ -1,1604 +1,465 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timpass — Fun Starts Here</title>
+<title>Diamond247</title>
 
 <style>
+:root{
+  --diamond-blue:#0789c8;
+  --diamond-blue-dark:#0875ad;
+  --diamond-navy:#293b50;
+  --diamond-border:#d6e2eb;
+  --diamond-page:#f1f4f7;
+  --diamond-text:#1c2935;
+}
+
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f6f7fb;
-    color:#171717;
+  background:var(--diamond-page);
+  color:var(--diamond-text);
 }
 
-/* NAVBAR */
-.navbar{
-    height:70px;
-    background:white;
-    border-bottom:1px solid #eee;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 6%;
-    position:sticky;
-    top:0;
-    z-index:20;
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
 }
 
-.logo{
-    font-size:27px;
-    font-weight:800;
-    color:#6c4cff;
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:#555;
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#fff,#eaf2f8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
 }
 
-.profile{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:#6c4cff;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
+.box{
+  width:100%;
+  background:#fff;
+  border:1px solid var(--diamond-border);
+  border-radius:8px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 8px 28px rgba(41,59,80,.12);
 }
 
-/* HERO */
-.hero{
-    padding:70px 6%;
-    display:grid;
-    grid-template-columns:1.2fr 1fr;
-    gap:50px;
-    align-items:center;
+.badge{
+  display:inline-block;
+  background:var(--diamond-blue);
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
 }
 
-.hero h1{
-    font-size:60px;
-    line-height:1.05;
-    margin-bottom:20px;
+h1{
+  font-size:34px;
+  color:var(--diamond-navy);
+  margin-bottom:10px;
+  text-transform:uppercase;
 }
 
-.hero h1 span{
-    color:#6c4cff;
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#000;
 }
 
-.hero p{
-    color:#666;
-    font-size:18px;
-    line-height:1.6;
-    max-width:550px;
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
 }
 
-.hero-buttons{
-    margin-top:30px;
-    display:flex;
-    gap:12px;
+.feature{
+  background:linear-gradient(90deg,#f5f8fa,#e9f3f9);
+  border:1px solid var(--diamond-border);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
 }
 
-.btn{
-    padding:14px 24px;
-    border:0;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+.feature span{
+  color:var(--diamond-blue-dark);
 }
 
-.primary{
-    background:#6c4cff;
-    color:white;
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:var(--diamond-blue);
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid var(--diamond-blue-dark);
+  transition:.3s;
 }
 
-.secondary{
-    background:white;
-    border:1px solid #ddd;
+.signup-btn:hover{
+  background:var(--diamond-blue-dark);
+  transform:scale(1.03);
 }
 
-/* PREVIEW */
-.app-preview{
-    background:#171717;
-    border-radius:25px;
-    padding:25px;
-    color:white;
-    box-shadow:0 20px 50px #0002;
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
 }
 
-.preview-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
+.website-row a{
+  text-decoration:none;
 }
 
-.preview-card{
-    background:#252525;
-    padding:20px;
-    border-radius:18px;
-    margin-bottom:15px;
+.website{
+  color:var(--diamond-blue-dark);
 }
 
-.big-score{
-    font-size:42px;
-    font-weight:bold;
-    margin-top:8px;
+.whatsapp-small{
+  color:#168a45;
 }
 
-/* SECTIONS */
-.section{
-    padding:40px 6%;
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
 }
 
-.section-title{
-    margin-bottom:25px;
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
 }
 
-.section-title h2{
-    font-size:30px;
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:var(--diamond-blue);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(7,137,200,.35);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
 }
 
-/* GAMES */
-.games{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:var(--diamond-blue-dark);
+  box-shadow:0 12px 25px rgba(7,137,200,.45);
 }
 
-.game-card{
-    background:white;
-    border:1px solid #eee;
-    padding:25px;
-    border-radius:18px;
-    cursor:pointer;
-    transition:.25s;
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
 }
 
-.game-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 30px #0001;
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
 }
 
-.game-icon{
-    width:60px;
-    height:60px;
-    background:#eeeaff;
-    border-radius:15px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:30px;
-    margin-bottom:18px;
+.bonus-popup{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  background:rgba(0,0,0,.78);
 }
 
-.game-card h3{
-    margin-bottom:8px;
+.bonus-popup[hidden]{
+  display:none;
 }
 
-.game-card p{
-    color:#777;
-    font-size:14px;
-    line-height:1.5;
+.bonus-dialog{
+  position:relative;
+  width:min(100%,420px);
+  padding:34px 24px 28px;
+  border:2px solid var(--diamond-blue);
+  border-radius:10px;
+  background:#fff;
+  text-align:center;
+  color:var(--diamond-text);
+  box-shadow:0 18px 60px rgba(0,0,0,.35);
+  animation:popup-enter .24s ease-out;
 }
 
-/* STATS */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+.bonus-close{
+  position:absolute;
+  top:8px;
+  right:12px;
+  border:0;
+  background:transparent;
+  color:var(--diamond-navy);
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
 }
 
-.stat{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    border:1px solid #eee;
+.bonus-dialog h2{
+  margin-bottom:10px;
+  color:var(--diamond-blue-dark);
+  font-size:30px;
 }
 
-.stat small{
-    color:#888;
+.bonus-dialog p{
+  margin-bottom:22px;
+  color:#455462;
+  line-height:1.5;
 }
 
-.stat h2{
-    margin-top:8px;
+.bonus-claim{
+  display:block;
+  padding:14px 18px;
+  border-radius:8px;
+  background:var(--diamond-blue);
+  color:#fff;
+  font-size:17px;
+  font-weight:800;
+  text-decoration:none;
 }
 
-/* FOOTER */
-footer{
-    background:#171717;
-    color:white;
-    padding:40px 6%;
-    margin-top:40px;
-    display:flex;
-    justify-content:space-between;
+.bonus-claim:hover{
+  background:var(--diamond-blue-dark);
 }
 
-footer p{
-    color:#aaa;
+@keyframes popup-enter{
+  from{opacity:0;transform:translateY(10px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
 }
 
-/* MODAL */
-.modal{
-    position:fixed;
-    inset:0;
-    background:#000b;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:100;
+@media(prefers-reduced-motion:reduce){
+  .bonus-dialog{animation:none}
 }
 
-.modal-box{
-    width:92%;
-    max-width:650px;
-    max-height:90vh;
-    overflow-y:auto;
-    background:white;
-    border-radius:25px;
-    padding:25px;
-    position:relative;
-}
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
 
-.close{
-    position:absolute;
-    right:20px;
-    top:12px;
-    font-size:30px;
-    cursor:pointer;
-}
-
-/* TAP RUSH */
-#tapArea{
-    height:350px;
-    background:#f0edff;
-    border-radius:18px;
-    position:relative;
-    overflow:hidden;
-    margin:20px 0;
-}
-
-#circle{
-    position:absolute;
-    width:55px;
-    height:55px;
-    background:#6c4cff;
-    border-radius:50%;
-    display:none;
-    cursor:pointer;
-}
-
-/* MEMORY */
-.memory-board{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:20px;
-}
-
-.memory-card{
-    aspect-ratio:1;
-    border:0;
-    border-radius:12px;
-    background:#6c4cff;
-    color:white;
-    font-size:30px;
-    cursor:pointer;
-}
-
-.memory-card.flipped,
-.memory-card.matched{
-    background:white;
-    border:2px solid #6c4cff;
-    color:#111;
-}
-
-.memory-card.matched{
-    opacity:.6;
-    cursor:default;
-}
-
-/* QUICK PUZZLE */
-.puzzle-question{
-    margin:30px 0;
-    text-align:center;
-}
-
-#puzzleEquation{
-    font-size:45px;
-    font-weight:bold;
-    margin:20px 0;
-}
-
-#puzzleAnswer{
+  .demo,
+  .right{
     width:100%;
-    padding:16px;
-    border:2px solid #ddd;
-    border-radius:12px;
-    font-size:20px;
-    text-align:center;
-    outline:none;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
 }
 
-#puzzleAnswer:focus{
-    border-color:#6c4cff;
-}
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
 
-.puzzle-result{
-    text-align:center;
-    min-height:30px;
-    margin-top:15px;
-    font-weight:bold;
-}
+  .sub{
+    font-size:16px;
+  }
 
-/* SPACE RUN */
-#spaceArea{
-    height:400px;
-    background:
-        radial-gradient(circle at 20% 20%,white 1px,transparent 2px),
-        radial-gradient(circle at 70% 40%,white 1px,transparent 2px),
-        radial-gradient(circle at 40% 80%,white 1px,transparent 2px),
-        #080b20;
-    background-size:100px 100px;
-    border-radius:18px;
-    position:relative;
-    overflow:hidden;
-    margin:20px 0;
-}
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
 
-#spaceship{
-    position:absolute;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    font-size:45px;
-    user-select:none;
-}
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
 
-.asteroid{
-    position:absolute;
-    font-size:35px;
-    top:-50px;
-}
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
 
-.space-instructions{
-    text-align:center;
-    color:#666;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-    .hero{
-        grid-template-columns:1fr;
-    }
-
-    .games{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .nav-links{
-        display:none;
-    }
-}
-
-@media(max-width:600px){
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .games,
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .memory-board{
-        gap:7px;
-    }
-
-    .memory-card{
-        font-size:24px;
-    }
-
-    footer{
-        flex-direction:column;
-        gap:15px;
-    }
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
+<div class="bonus-popup" id="bonusPopup" role="dialog" aria-modal="true" aria-labelledby="bonusTitle">
+  <div class="bonus-dialog">
+    <button class="bonus-close" id="bonusClose" type="button" aria-label="Close bonus popup">&times;</button>
+    <h2 id="bonusTitle">Bonus Offer</h2>
+    <p>10% Deposit Bonus<br>15% Losing Bonus<br>3% Referral Bonus</p>
+    <a class="bonus-claim" href="https://diamond247.com/clk?src=fLABjgt7">Sign Up with Diamond247</a>
+  </div>
+</div>
 
-    <div class="logo">timpass.</div>
+<div class="container">
 
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#games">Games</a>
-        <a href="#stats">Stats</a>
+  <div class="demo">
+    <a href="https://diamond247.com/clk?src=fLABjgt7" target="_blank" rel="noopener noreferrer" class="floating-signup">SIGN UP WITH DIAMOND247</a>
+    <iframe src="https://diamond247.com/clk?src=fLABjgt7"></iframe>
+  </div>
+
+  <div class="right">
+    <div class="box">
+
+  <div class="badge">DIAMOND247</div>
+
+  <h1>Get Your ID Now</h1>
+
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
 
-    <div class="profile">T</div>
-
-</nav>
-
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-    <div>
-
-        <h1>
-            Your daily dose of
-            <span>fun.</span>
-        </h1>
-
-        <p>
-            Take a break, play quick games, challenge yourself
-            and beat your personal records.
-        </p>
-
-        <div class="hero-buttons">
-
-            <button class="btn primary"
-                    onclick="openTapGame()">
-                ▶ Play Now
-            </button>
-
-            <button class="btn secondary"
-                    onclick="document.getElementById('games').scrollIntoView()">
-                Explore Games
-            </button>
-
-        </div>
-
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
 
-
-    <div class="app-preview">
-
-        <div class="preview-top">
-            <strong>Today's Activity</strong>
-            <span>🔥 7 day streak</span>
-        </div>
-
-        <div class="preview-card">
-            <small>Today's Score</small>
-            <div class="big-score" id="previewScore">0</div>
-        </div>
-
-        <div class="preview-card">
-            <small>Favourite Game</small>
-            <h3 style="margin-top:8px;">
-                🧠 Memory Flip
-            </h3>
-        </div>
-
+    <div class="feature">
+      Diamond247 Signup:
+      <a
+        class="signup-btn"
+        href="https://diamond247.com/clk?src=fLABjgt7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sign Up with Diamond247
+      </a>
     </div>
 
-</section>
-
-
-<!-- GAMES -->
-<section class="section" id="games">
-
-    <div class="section-title">
-        <h2>Popular Games</h2>
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
     </div>
 
-    <div class="games">
+  </div>
 
-        <!-- TAP -->
-        <div class="game-card"
-             onclick="openTapGame()">
+  <div class="website-row">
 
-            <div class="game-icon">🎯</div>
+    <a
+      class="website"
+      href="https://diamond247.com/clk?src=fLABjgt7"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 https://diamond247.com/clk?src=fLABjgt7
+    </a>
 
-            <h3>Tap Rush</h3>
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/+447933838366"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
 
-            <p>
-                Test your speed and tap the target
-                as quickly as possible.
-            </p>
+  </div>
 
-        </div>
+  <a
+    class="cta"
+    href="https://wa.me/+447933838366?text=Hello%20I%20want%20new%20diamond247%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
 
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
 
-        <!-- MEMORY -->
-        <div class="game-card"
-             onclick="openMemoryGame()">
-
-            <div class="game-icon">🧠</div>
-
-            <h3>Memory Flip</h3>
-
-            <p>
-                Flip cards and match all
-                the hidden pairs.
-            </p>
-
-        </div>
-
-
-        <!-- PUZZLE -->
-        <div class="game-card"
-             onclick="openPuzzleGame()">
-
-            <div class="game-icon">🧩</div>
-
-            <h3>Quick Puzzle</h3>
-
-            <p>
-                Solve as many math puzzles
-                as you can before time runs out.
-            </p>
-
-        </div>
-
-
-        <!-- SPACE -->
-        <div class="game-card"
-             onclick="openSpaceGame()">
-
-            <div class="game-icon">🚀</div>
-
-            <h3>Space Run</h3>
-
-            <p>
-                Dodge incoming asteroids
-                and survive as long as possible.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- STATS -->
-<section class="section" id="stats">
-
-    <div class="section-title">
-        <h2>Your Stats</h2>
-    </div>
-
-    <div class="stats">
-
-        <div class="stat">
-            <small>Games Played</small>
-            <h2 id="gamesPlayed">0</h2>
-        </div>
-
-        <div class="stat">
-            <small>Memory Best</small>
-            <h2 id="memoryBest">-</h2>
-        </div>
-
-        <div class="stat">
-            <small>Tap Best</small>
-            <h2 id="tapBest">0</h2>
-        </div>
-
-        <div class="stat">
-            <small>Puzzle Best</small>
-            <h2 id="puzzleBest">0</h2>
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <div>
-        <h2>timpass.</h2>
-        <p>Small games. Big fun.</p>
-    </div>
-
-    <p>© 2026 Timpass</p>
-
-</footer>
-
-
-<!-- =====================================================
-     TAP RUSH MODAL
-===================================================== -->
-
-<div class="modal" id="tapModal">
-
-    <div class="modal-box">
-
-        <div class="close"
-             onclick="closeTapGame()">×</div>
-
-        <h2>🎯 Tap Rush</h2>
-
-        <p>
-            Score:
-            <b id="tapScore">0</b>
-            &nbsp; | &nbsp;
-            Time:
-            <b id="tapTime">20</b>s
-        </p>
-
-        <div id="tapArea">
-            <div id="circle"></div>
-        </div>
-
-        <button class="btn primary"
-                onclick="startTapGame()">
-            Start Game
-        </button>
-
-    </div>
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
 
 </div>
 
-
-<!-- =====================================================
-     MEMORY FLIP MODAL
-===================================================== -->
-
-<div class="modal" id="memoryModal">
-
-    <div class="modal-box">
-
-        <div class="close"
-             onclick="closeMemoryGame()">×</div>
-
-        <h2>🧠 Memory Flip</h2>
-
-        <p>
-            Moves:
-            <b id="moves">0</b>
-            &nbsp; | &nbsp;
-            Matches:
-            <b id="matches">0</b>/8
-        </p>
-
-        <div class="memory-board"
-             id="memoryBoard">
-        </div>
-
-        <button class="btn primary"
-                onclick="startMemoryGame()">
-            New Game
-        </button>
-
-    </div>
+  </div>
 
 </div>
-
-
-<!-- =====================================================
-     QUICK PUZZLE MODAL
-===================================================== -->
-
-<div class="modal" id="puzzleModal">
-
-    <div class="modal-box">
-
-        <div class="close"
-             onclick="closePuzzleGame()">×</div>
-
-        <h2>🧩 Quick Puzzle</h2>
-
-        <p>
-            Solve as many equations as possible!
-        </p>
-
-        <div class="puzzle-question">
-
-            <div>
-                Score:
-                <b id="puzzleScore">0</b>
-                &nbsp; | &nbsp;
-                Time:
-                <b id="puzzleTime">30</b>s
-            </div>
-
-            <div id="puzzleEquation">
-                Ready?
-            </div>
-
-            <input
-                type="number"
-                id="puzzleAnswer"
-                placeholder="Enter answer"
-                onkeydown="if(event.key==='Enter') checkPuzzleAnswer()"
-            >
-
-            <div class="puzzle-result"
-                 id="puzzleResult">
-            </div>
-
-        </div>
-
-        <button class="btn primary"
-                onclick="startPuzzleGame()">
-            Start Game
-        </button>
-
-        <button class="btn secondary"
-                onclick="checkPuzzleAnswer()">
-            Submit Answer
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     SPACE RUN MODAL
-===================================================== -->
-
-<div class="modal" id="spaceModal">
-
-    <div class="modal-box">
-
-        <div class="close"
-             onclick="closeSpaceGame()">×</div>
-
-        <h2>🚀 Space Run</h2>
-
-        <p>
-            Score:
-            <b id="spaceScore">0</b>
-            &nbsp; | &nbsp;
-            Use ← → or A / D to move
-        </p>
-
-        <div id="spaceArea">
-
-            <div id="spaceship">
-                🚀
-            </div>
-
-        </div>
-
-        <p class="space-instructions">
-            Dodge the ☄️ asteroids!
-        </p>
-
-        <button class="btn primary"
-                onclick="startSpaceGame()">
-            Start Game
-        </button>
-
-    </div>
-
-</div>
-
 
 <script>
+const bonusPopup = document.getElementById('bonusPopup');
+const bonusClose = document.getElementById('bonusClose');
 
-/* =====================================================
-   GENERAL STATS
-===================================================== */
-
-let gamesPlayed =
-    Number(localStorage.getItem("gamesPlayed") || 0);
-
-document.getElementById("gamesPlayed").textContent =
-    gamesPlayed;
-
-function addGamePlayed(){
-
-    gamesPlayed++;
-
-    localStorage.setItem(
-        "gamesPlayed",
-        gamesPlayed
-    );
-
-    document.getElementById(
-        "gamesPlayed"
-    ).textContent = gamesPlayed;
+function closeBonusPopup(){
+  bonusPopup.hidden = true;
 }
 
-
-/* =====================================================
-   TAP RUSH
-===================================================== */
-
-let tapScore = 0;
-let tapTime = 20;
-let tapTimer;
-let tapPlaying = false;
-
-const tapModal =
-    document.getElementById("tapModal");
-
-const circle =
-    document.getElementById("circle");
-
-const tapArea =
-    document.getElementById("tapArea");
-
-function openTapGame(){
-
-    tapModal.style.display = "flex";
-}
-
-function closeTapGame(){
-
-    tapModal.style.display = "none";
-
-    tapPlaying = false;
-
-    clearInterval(tapTimer);
-
-    circle.style.display = "none";
-}
-
-function startTapGame(){
-
-    tapScore = 0;
-    tapTime = 20;
-    tapPlaying = true;
-
-    document.getElementById("tapScore")
-        .textContent = tapScore;
-
-    document.getElementById("tapTime")
-        .textContent = tapTime;
-
-    circle.style.display = "block";
-
-    moveCircle();
-
-    clearInterval(tapTimer);
-
-    tapTimer = setInterval(() => {
-
-        tapTime--;
-
-        document.getElementById("tapTime")
-            .textContent = tapTime;
-
-        if(tapTime <= 0){
-            endTapGame();
-        }
-
-    },1000);
-}
-
-function moveCircle(){
-
-    const maxX =
-        tapArea.clientWidth -
-        circle.offsetWidth;
-
-    const maxY =
-        tapArea.clientHeight -
-        circle.offsetHeight;
-
-    circle.style.left =
-        Math.random() * maxX + "px";
-
-    circle.style.top =
-        Math.random() * maxY + "px";
-}
-
-circle.onclick = function(){
-
-    if(!tapPlaying) return;
-
-    tapScore++;
-
-    document.getElementById("tapScore")
-        .textContent = tapScore;
-
-    moveCircle();
-};
-
-function endTapGame(){
-
-    tapPlaying = false;
-
-    clearInterval(tapTimer);
-
-    circle.style.display = "none";
-
-    let best =
-        Number(localStorage.getItem("tapBest") || 0);
-
-    if(tapScore > best){
-
-        best = tapScore;
-
-        localStorage.setItem(
-            "tapBest",
-            best
-        );
-    }
-
-    document.getElementById("tapBest")
-        .textContent = best;
-
-    addGamePlayed();
-
-    document.getElementById("previewScore")
-        .textContent = tapScore;
-
-    alert(
-        "🎯 Game Over!\n\nScore: " +
-        tapScore
-    );
-}
-
-
-/* =====================================================
-   MEMORY FLIP
-===================================================== */
-
-const memoryModal =
-    document.getElementById("memoryModal");
-
-const memoryBoard =
-    document.getElementById("memoryBoard");
-
-const emojis = [
-    "🍎","🍎",
-    "🍕","🍕",
-    "🚀","🚀",
-    "🐶","🐶",
-    "⚽","⚽",
-    "🎮","🎮",
-    "🌟","🌟",
-    "🍔","🍔"
-];
-
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-let memoryMoves = 0;
-let memoryMatches = 0;
-
-function openMemoryGame(){
-
-    memoryModal.style.display = "flex";
-
-    startMemoryGame();
-}
-
-function closeMemoryGame(){
-
-    memoryModal.style.display = "none";
-
-    lockBoard = false;
-}
-
-function startMemoryGame(){
-
-    firstCard = null;
-    secondCard = null;
-    lockBoard = false;
-
-    memoryMoves = 0;
-    memoryMatches = 0;
-
-    document.getElementById("moves")
-        .textContent = 0;
-
-    document.getElementById("matches")
-        .textContent = 0;
-
-    memoryBoard.innerHTML = "";
-
-    let cards = [...emojis];
-
-    cards.sort(() => Math.random() - .5);
-
-    cards.forEach(emoji => {
-
-        const card =
-            document.createElement("button");
-
-        card.className = "memory-card";
-
-        card.dataset.value = emoji;
-
-        card.textContent = "?";
-
-        card.onclick = () =>
-            flipCard(card);
-
-        memoryBoard.appendChild(card);
-    });
-}
-
-function flipCard(card){
-
-    if(lockBoard) return;
-
-    if(card.classList.contains("flipped")) return;
-
-    if(card.classList.contains("matched")) return;
-
-    card.classList.add("flipped");
-
-    card.textContent =
-        card.dataset.value;
-
-    if(!firstCard){
-
-        firstCard = card;
-
-        return;
-    }
-
-    secondCard = card;
-
-    memoryMoves++;
-
-    document.getElementById("moves")
-        .textContent = memoryMoves;
-
-    checkMatch();
-}
-
-function checkMatch(){
-
-    const match =
-        firstCard.dataset.value ===
-        secondCard.dataset.value;
-
-    if(match){
-
-        firstCard.classList.add("matched");
-
-        secondCard.classList.add("matched");
-
-        memoryMatches++;
-
-        document.getElementById("matches")
-            .textContent = memoryMatches;
-
-        resetMemoryCards();
-
-        if(memoryMatches === 8){
-
-            setTimeout(() => {
-
-                let best =
-                    Number(
-                        localStorage.getItem(
-                            "memoryBest"
-                        ) || 0
-                    );
-
-                if(best === 0 ||
-                   memoryMoves < best){
-
-                    localStorage.setItem(
-                        "memoryBest",
-                        memoryMoves
-                    );
-
-                    document.getElementById(
-                        "memoryBest"
-                    ).textContent =
-                        memoryMoves;
-                }
-
-                addGamePlayed();
-
-                alert(
-                    "🎉 You won!\n\n" +
-                    "Moves: " +
-                    memoryMoves
-                );
-
-            },300);
-        }
-
-    }else{
-
-        lockBoard = true;
-
-        setTimeout(() => {
-
-            firstCard.classList.remove("flipped");
-
-            secondCard.classList.remove("flipped");
-
-            firstCard.textContent = "?";
-            secondCard.textContent = "?";
-
-            resetMemoryCards();
-
-        },700);
-    }
-}
-
-function resetMemoryCards(){
-
-    firstCard = null;
-    secondCard = null;
-    lockBoard = false;
-}
-
-
-/* =====================================================
-   QUICK PUZZLE
-===================================================== */
-
-const puzzleModal =
-    document.getElementById("puzzleModal");
-
-let puzzleScore = 0;
-let puzzleTime = 30;
-let puzzleTimer;
-let puzzlePlaying = false;
-let correctAnswer = 0;
-
-function openPuzzleGame(){
-
-    puzzleModal.style.display = "flex";
-
-    document.getElementById(
-        "puzzleEquation"
-    ).textContent = "Ready?";
-}
-
-function closePuzzleGame(){
-
-    puzzleModal.style.display = "none";
-
-    puzzlePlaying = false;
-
-    clearInterval(puzzleTimer);
-}
-
-function startPuzzleGame(){
-
-    puzzleScore = 0;
-    puzzleTime = 30;
-    puzzlePlaying = true;
-
-    document.getElementById(
-        "puzzleScore"
-    ).textContent = 0;
-
-    document.getElementById(
-        "puzzleTime"
-    ).textContent = 30;
-
-    document.getElementById(
-        "puzzleResult"
-    ).textContent = "";
-
-    document.getElementById(
-        "puzzleAnswer"
-    ).value = "";
-
-    generatePuzzle();
-
-    clearInterval(puzzleTimer);
-
-    puzzleTimer = setInterval(() => {
-
-        puzzleTime--;
-
-        document.getElementById(
-            "puzzleTime"
-        ).textContent = puzzleTime;
-
-        if(puzzleTime <= 0){
-
-            endPuzzleGame();
-        }
-
-    },1000);
-
-    document.getElementById(
-        "puzzleAnswer"
-    ).focus();
-}
-
-function generatePuzzle(){
-
-    const a =
-        Math.floor(Math.random()*20)+1;
-
-    const b =
-        Math.floor(Math.random()*20)+1;
-
-    const operators = ["+","-","×"];
-
-    const op =
-        operators[
-            Math.floor(
-                Math.random()*operators.length
-            )
-        ];
-
-    if(op === "+"){
-        correctAnswer = a+b;
-    }
-
-    if(op === "-"){
-        correctAnswer = a-b;
-    }
-
-    if(op === "×"){
-        correctAnswer = a*b;
-    }
-
-    document.getElementById(
-        "puzzleEquation"
-    ).textContent =
-        `${a} ${op} ${b} = ?`;
-
-    document.getElementById(
-        "puzzleAnswer"
-    ).value = "";
-
-    document.getElementById(
-        "puzzleAnswer"
-    ).focus();
-}
-
-function checkPuzzleAnswer(){
-
-    if(!puzzlePlaying) return;
-
-    const input =
-        Number(
-            document.getElementById(
-                "puzzleAnswer"
-            ).value
-        );
-
-    const result =
-        document.getElementById(
-            "puzzleResult"
-        );
-
-    if(input === correctAnswer){
-
-        puzzleScore++;
-
-        document.getElementById(
-            "puzzleScore"
-        ).textContent =
-            puzzleScore;
-
-        result.textContent =
-            "✅ Correct!";
-
-        setTimeout(() => {
-
-            result.textContent = "";
-
-            if(puzzlePlaying){
-                generatePuzzle();
-            }
-
-        },300);
-
-    }else{
-
-        result.textContent =
-            "❌ Try again!";
-    }
-}
-
-function endPuzzleGame(){
-
-    puzzlePlaying = false;
-
-    clearInterval(puzzleTimer);
-
-    let best =
-        Number(
-            localStorage.getItem(
-                "puzzleBest"
-            ) || 0
-        );
-
-    if(puzzleScore > best){
-
-        best = puzzleScore;
-
-        localStorage.setItem(
-            "puzzleBest",
-            best
-        );
-    }
-
-    document.getElementById(
-        "puzzleBest"
-    ).textContent = best;
-
-    addGamePlayed();
-
-    document.getElementById(
-        "previewScore"
-    ).textContent = puzzleScore;
-
-    alert(
-        "🧩 Time's Up!\n\n" +
-        "Correct answers: " +
-        puzzleScore
-    );
-}
-
-
-/* =====================================================
-   SPACE RUN
-===================================================== */
-
-const spaceModal =
-    document.getElementById("spaceModal");
-
-const spaceArea =
-    document.getElementById("spaceArea");
-
-const spaceship =
-    document.getElementById("spaceship");
-
-let spaceScore = 0;
-let spacePlaying = false;
-let spaceLoop;
-let asteroidTimer;
-let shipX = 50;
-let keys = {};
-
-function openSpaceGame(){
-
-    spaceModal.style.display = "flex";
-}
-
-function closeSpaceGame(){
-
-    spaceModal.style.display = "none";
-
-    stopSpaceGame();
-}
-
-function startSpaceGame(){
-
-    stopSpaceGame();
-
-    spacePlaying = true;
-
-    spaceScore = 0;
-
-    shipX = 50;
-
-    document.getElementById(
-        "spaceScore"
-    ).textContent = 0;
-
-    spaceship.style.left = "50%";
-
-    document.querySelectorAll(
-        ".asteroid"
-    ).forEach(a => a.remove());
-
-    spaceLoop =
-        requestAnimationFrame(
-            updateSpace
-        );
-
-    asteroidTimer =
-        setInterval(
-            createAsteroid,
-            650
-        );
-}
-
-function stopSpaceGame(){
-
-    spacePlaying = false;
-
-    cancelAnimationFrame(spaceLoop);
-
-    clearInterval(asteroidTimer);
-
-    document.querySelectorAll(
-        ".asteroid"
-    ).forEach(a => a.remove());
-}
-
-function createAsteroid(){
-
-    if(!spacePlaying) return;
-
-    const asteroid =
-        document.createElement("div");
-
-    asteroid.className = "asteroid";
-
-    asteroid.textContent = "☄️";
-
-    asteroid.style.left =
-        Math.random()*90 + "%";
-
-    spaceArea.appendChild(asteroid);
-}
-
-function updateSpace(){
-
-    if(!spacePlaying) return;
-
-    const asteroids =
-        document.querySelectorAll(
-            ".asteroid"
-        );
-
-    asteroids.forEach(asteroid => {
-
-        let top =
-            parseFloat(
-                asteroid.style.top || "-50"
-            );
-
-        top += 4;
-
-        asteroid.style.top =
-            top + "px";
-
-        if(top >
-           spaceArea.clientHeight){
-
-            asteroid.remove();
-
-            spaceScore++;
-
-            document.getElementById(
-                "spaceScore"
-            ).textContent =
-                spaceScore;
-        }
-
-        checkCollision(asteroid);
-    });
-
-
-    /* MOVE SHIP */
-
-    if(keys["ArrowLeft"] || keys["a"]){
-
-        shipX -= 1.2;
-    }
-
-    if(keys["ArrowRight"] || keys["d"]){
-
-        shipX += 1.2;
-    }
-
-    shipX =
-        Math.max(
-            5,
-            Math.min(95,shipX)
-        );
-
-    spaceship.style.left =
-        shipX + "%";
-
-
-    spaceLoop =
-        requestAnimationFrame(
-            updateSpace
-        );
-}
-
-function checkCollision(asteroid){
-
-    const a =
-        asteroid.getBoundingClientRect();
-
-    const s =
-        spaceship.getBoundingClientRect();
-
-    if(
-        a.left < s.right &&
-        a.right > s.left &&
-        a.top < s.bottom &&
-        a.bottom > s.top
-    ){
-
-        spaceGameOver();
-    }
-}
-
-function spaceGameOver(){
-
-    if(!spacePlaying) return;
-
-    stopSpaceGame();
-
-    addGamePlayed();
-
-    document.getElementById(
-        "previewScore"
-    ).textContent =
-        spaceScore;
-
-    alert(
-        "💥 Game Over!\n\n" +
-        "Asteroids dodged: " +
-        spaceScore
-    );
-}
-
-
-/* KEYBOARD CONTROLS */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        keys[event.key] = true;
-
-        if([
-            "ArrowLeft",
-            "ArrowRight"
-        ].includes(event.key)){
-
-            event.preventDefault();
-        }
-    }
-);
-
-document.addEventListener(
-    "keyup",
-    event => {
-
-        keys[event.key] = false;
-    }
-);
-
-
-/* =====================================================
-   LOAD SAVED DATA
-===================================================== */
-
-document.getElementById(
-    "tapBest"
-).textContent =
-    localStorage.getItem("tapBest") || 0;
-
-document.getElementById(
-    "memoryBest"
-).textContent =
-    localStorage.getItem("memoryBest") || "-";
-
-document.getElementById(
-    "puzzleBest"
-).textContent =
-    localStorage.getItem("puzzleBest") || 0;
-
+bonusClose.addEventListener('click', closeBonusPopup);
+bonusPopup.addEventListener('click', (event) => {
+  if(event.target === bonusPopup) closeBonusPopup();
+});
+document.addEventListener('keydown', (event) => {
+  if(event.key === 'Escape') closeBonusPopup();
+});
 </script>
 
 </body>
 </html>
-```
